@@ -68,4 +68,19 @@ body {
     height: 85%;
     margin: auto;
     background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+}
+
+.list-object-container {
+    width: 95%;
+    height: 40px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
