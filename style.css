@@ -34,21 +34,21 @@ body {
 
 #left-padding-container {
     height: 100%;
-    width: 15%;
+    width: 5%;
     background-color: darkgrey;
     margin-right: 10px;
 }
 
 #right-padding-container {
     height: 100%;
-    width: 15%;
+    width: 2%;
     background-color: darkgrey;
     margin-left: 10px;
 }
 
 #outer-content-container {
     height: 100%;
-    width: 70%;
+    width: 93%;
     background-color: darkgrey;
     display: flex;
     flex-direction: column;
@@ -58,14 +58,13 @@ body {
 
 #contextual-menu-container {
     width: 100%;
-    height: 15%;
+    height: 5%;
     background-color: lightgrey;
-    margin-bottom: 5px;
 }
 
 #inner-content-container {
-    width: 70%;
-    height: 85%;
+    width: 100%;
+    height: 95%;
     margin: auto;
     background-color: lightgrey;
     display: flex;
@@ -73,10 +72,11 @@ body {
     flex-wrap: nowrap;
     justify-content: start;
     align-items: center;
+    overflow-y: scroll;
 }
 
 .list-object-container {
-    width: 95%;
+    width: 100%;
     height: 40px;
     margin: 5px;
     display: flex;

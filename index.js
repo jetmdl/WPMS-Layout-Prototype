@@ -1,5 +1,5 @@
 function insertJobElements(){
-    for (let i=0; i<=10; i++){
+    for (let i=0; i<=100; i++){
         const div = document.createElement("div");
         div.id = i;
         div.className = "list-object-container ";
