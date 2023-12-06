@@ -87,7 +87,7 @@ function insertJobElements(){
             const expandButton = document.createElement("div");
             expandButton.id = "expandButton" + i;
             expandButton.className = "expandButton";
-            expandButton.style = "background-color: grey;";
+            expandButton.style = "background-color: #999999;";
             document.getElementById(jobButtonContainer.id).appendChild(expandButton); 
 
                 const expandText = document.createTextNode("Expand");
@@ -98,7 +98,7 @@ function insertJobElements(){
             const openButton = document.createElement("div");
             openButton.id = "openButton" + i;
             openButton.className = "openButton";
-            openButton.style = "background-color: grey;";
+            openButton.style = "background-color: #999999;";
             document.getElementById(jobButtonContainer.id).appendChild(openButton); 
 
                 const openText = document.createTextNode("Open");
