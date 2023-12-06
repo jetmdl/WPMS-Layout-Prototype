@@ -158,8 +158,8 @@ function contractJobSummary(anId){
     const contractDiv1 = document.getElementById(anId);
     const contractDiv2 = document.getElementById("hiddenElementsContainer" + anId);
 
-    contractDiv1.style = "height: 40px";
-    contractDiv2.style = "height: 1px";
+    contractDiv1.style = "height: 30px";
+    contractDiv2.style = "height: 0px";
 
     addTestExpandListeners();
 }
