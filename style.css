@@ -1,4 +1,9 @@
-body {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+    body {
     height: 1080px;
 }
 
@@ -10,14 +15,30 @@ body {
 #top-container {
     height: 15%;
     width: 100%;
-    background-color: darkgrey;
+    background-color: #d9d9d9;
     margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: start;
+}
+
+#blue-panel {
+    width: 100%;
+    height:65%;
+    background-color: #1f2937;
+}
+
+#light-stripe {
+    width: 100%;
+    height:3%;
+    background-color: lightblue;
 }
 
 #center-container {
     height: 77%;
     width: 100%;
-    background-color: grey;
+    /* background-color: grey; */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -34,7 +55,23 @@ body {
 #left-padding-container {
     height: 100%;
     width: 5%;
-    background-color: darkgrey;
+    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: start;
+    align-items: center;
+}
+
+#side-menu-container {
+    height: 100%;
+    width: 95%;
+}
+
+#vertical-border {
+    height: 100%;
+    width: 5%;
+    background-color: white;
 }
 
 #right-padding-container {
@@ -46,7 +83,7 @@ body {
 #outer-content-container {
     height: 100%;
     width: 93%;
-    background-color: darkgrey;
+    /* background-color: darkgrey; */
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -81,7 +118,7 @@ body {
     width: 100%;
     height: 95%;
     margin: auto;
-    background-color: lightgrey;
+    /* background-color: lightgrey; */
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -94,7 +131,7 @@ body {
     width: 100%;
     height: 40px;
     margin-right: 2px;
-    background-color: gray;
+    background-color: #BFBFBF;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
@@ -106,7 +143,7 @@ body {
 .list-object-container {
     width: 100%;
     height: 40px;
-    margin: 5px;
+    margin-bottom: 4px;
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
