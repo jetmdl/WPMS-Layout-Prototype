@@ -10,7 +10,7 @@ body {
 #top-container {
     height: 15%;
     width: 100%;
-    background-color: grey;
+    background-color: darkgrey;
     margin: 10px;
 }
 
@@ -103,6 +103,7 @@ body {
     flex-wrap: nowrap;
     justify-content: center;
     align-items: center;
+    font-family: sans-serif;
 }
 
 .list-object-container {
