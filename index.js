@@ -9,85 +9,85 @@ function insertJobElements(){
         const shownElementsContainer = document.createElement("div");
         shownElementsContainer.id = "shownElementsContainer" + i;
         shownElementsContainer.className = "shownElementsContainer";
-        shownElementsContainer.style = "background-color: green;";
+        shownElementsContainer.style = "background-color: lightgrey;";
         document.getElementById(i).appendChild(shownElementsContainer);  
 
         const columnContainer = document.createElement("div");
         columnContainer.id = "columnContainer" + i;
         columnContainer.className = "columnContainer";
-        columnContainer.style = "background-color: green;";
+        columnContainer.style = "background-color: lightgrey;";
         document.getElementById(shownElementsContainer.id).appendChild(columnContainer); 
 
             const WoColumn = document.createElement("div");
             WoColumn.id = "WoColumn" + i;
             WoColumn.className = "column-item";
-            WoColumn.style = "background-color: grey;";
+            WoColumn.style = "background-color: white;";
             document.getElementById(columnContainer.id).appendChild(WoColumn); 
 
             const dieColumn = document.createElement("div");
             dieColumn.id = "dieColumn" + i;
             dieColumn.className = "column-item";
-            dieColumn.style = "background-color: grey;";
+            dieColumn.style = "background-color: white;";
             document.getElementById(columnContainer.id).appendChild(dieColumn); 
 
             const custColumn = document.createElement("div");
             custColumn.id = "custColumn" + i;
             custColumn.className = "column-item";
-            custColumn.style = "background-color: grey;";
+            custColumn.style = "background-color: white;";
             document.getElementById(columnContainer.id).appendChild(custColumn); 
 
             const typeColumn = document.createElement("div");
             typeColumn.id = "typeColumn" + i;
             typeColumn.className = "column-item";
-            typeColumn.style = "background-color: grey;";
+            typeColumn.style = "background-color: white;";
             document.getElementById(columnContainer.id).appendChild(typeColumn); 
 
             const diaColumn = document.createElement("div");
             diaColumn.id = "diaColumn" + i;
             diaColumn.className = "column-item";
-            diaColumn.style = "background-color: grey;";
+            diaColumn.style = "background-color: white;";
             document.getElementById(columnContainer.id).appendChild(diaColumn); 
 
             const orderNoColumn = document.createElement("div");
             orderNoColumn.id = "orderNoColumn" + i;
             orderNoColumn.className = "column-item";
-            orderNoColumn.style = "background-color: grey;";
+            orderNoColumn.style = "background-color: white;";
             document.getElementById(columnContainer.id).appendChild(orderNoColumn); 
 
             const startDateColumn = document.createElement("div");
             startDateColumn.id = "startDateColumn" + i;
             startDateColumn.className = "column-item";
-            startDateColumn.style = "background-color: grey;";
+            startDateColumn.style = "background-color: white;";
             document.getElementById(columnContainer.id).appendChild(startDateColumn); 
 
             const finishDateColumn = document.createElement("div");
             finishDateColumn.id = "finishDateColumn" + i;
             finishDateColumn.className = "column-item";
-            finishDateColumn.style = "background-color: grey;";
+            finishDateColumn.style = "background-color: white;";
             document.getElementById(columnContainer.id).appendChild(finishDateColumn); 
 
             const onTimeDateColumn = document.createElement("div");
             onTimeDateColumn.id = "onTimeDateColumn" + i;
             onTimeDateColumn.className = "column-item";
-            onTimeDateColumn.style = "background-color: grey;";
+            onTimeDateColumn.style = "background-color: white;";
             document.getElementById(columnContainer.id).appendChild(onTimeDateColumn); 
 
             const statusColumn = document.createElement("div");
             statusColumn.id = "statusColumn" + i;
             statusColumn.className = "column-item";
-            statusColumn.style = "background-color: grey;";
+            statusColumn.style = "background-color: white;";
             document.getElementById(columnContainer.id).appendChild(statusColumn); 
 
         const jobButtonContainer = document.createElement("div");
         jobButtonContainer.id = "jobButtonContainer" + i;
         jobButtonContainer.className = "jobButtonContainer";
-        jobButtonContainer.style = "background-color: green;";
+        jobButtonContainer.style = "background-color: lightgrey;";
         document.getElementById(shownElementsContainer.id).appendChild(jobButtonContainer); 
 
             const expandButton = document.createElement("div");
             expandButton.id = "expandButton" + i;
             expandButton.className = "expandButton";
-            expandButton.style = "background-color: white;";
+            expandButton.style = "background-color: grey;";
             document.getElementById(jobButtonContainer.id).appendChild(expandButton); 
 
                 const expandText = document.createTextNode("Expand");
@@ -98,7 +98,7 @@ function insertJobElements(){
             const openButton = document.createElement("div");
             openButton.id = "openButton" + i;
             openButton.className = "openButton";
-            openButton.style = "background-color: white;";
+            openButton.style = "background-color: grey;";
             document.getElementById(jobButtonContainer.id).appendChild(openButton); 
 
                 const openText = document.createTextNode("Open");
