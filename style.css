@@ -334,6 +334,18 @@
     font-family: sans-serif;
 }
 
+.collapseButton {
+    width: 50%;
+    height: 100%;
+    margin-right: 2px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
 .openButton {
     width: 50%;
     height: 100%;

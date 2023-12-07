@@ -1,3 +1,8 @@
+function removeElements(){
+    const el = document.getElementById('content-container');
+    while(el.firstChild) el.removeChild(el.firstChild);
+}
+
 function insertJobElements(){
     let colourChooser = 0;
     let elementColour = "E8E9EC;";
@@ -23,13 +28,9 @@ function insertJobElements(){
 
             if(colourChooser % 2 === 0){
                 elementColour = "background-color: #D9D9D9;";
-                console.log("even");
-                console.log(elementColour);
             }
             else{
                 elementColour = "background-color: #E8E9EC;";
-                console.log("odd");
-                console.log(elementColour);
             }
 
             const WoColumn = document.createElement("div");
@@ -104,18 +105,13 @@ function insertJobElements(){
             expandButton.style = "background-color: #999999;";
             document.getElementById(jobButtonContainer.id).appendChild(expandButton); 
 
-                // const expandText = document.createTextNode("Expand");
-                // expandText.className = "jobButtonText";
-                // document.getElementById(expandButton.id).appendChild(expandText); 
-
-                const elem = document.createElement("img");
-                elem.setAttribute("height", "15");
-                elem.setAttribute("width", "15");
-                elem.src = 'img/arrow-down-sign-to-navigate.png';
-                document.getElementById(expandButton.id).appendChild(elem);
+                const expandIcon = document.createElement("img");
+                expandIcon.setAttribute("height", "15");
+                expandIcon.setAttribute("width", "15");
+                expandIcon.src = 'img/arrow-down-sign-to-navigate.png';
+                document.getElementById(expandButton.id).appendChild(expandIcon);
                 //<a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by Freepik - Flaticon</a>
                 //<a href="https://www.flaticon.com/free-icons/up-arrow" title="up arrow icons">Up arrow icons created by Roundicons - Flaticon</a>
-
 
             const openButton = document.createElement("div");
             openButton.id = "openButton" + i;
@@ -123,14 +119,11 @@ function insertJobElements(){
             openButton.style = "background-color: #999999;";
             document.getElementById(jobButtonContainer.id).appendChild(openButton); 
 
-                // const openText = document.createTextNode("Open");
-                // openText.className = "jobButtonText";
-                // document.getElementById(openButton.id).appendChild(openText); 
-                const elem2 = document.createElement("img");
-                elem2.setAttribute("height", "15");
-                elem2.setAttribute("width", "15");
-                elem2.src = 'img/share.png';
-                document.getElementById(openButton.id).appendChild(elem2);
+                const openIcon = document.createElement("img");
+                openIcon.setAttribute("height", "15");
+                openIcon.setAttribute("width", "15");
+                openIcon.src = 'img/share.png';
+                document.getElementById(openButton.id).appendChild(openIcon);
                 //<a href="https://www.flaticon.com/free-icons/export" title="export icons">Export icons created by Amazona Adorada - Flaticon</a>
 
 
@@ -144,7 +137,7 @@ function insertJobElements(){
 }
 
 function addTestExpandListeners(){
-    let clickedIdLight = document.getElementsByClassName("jobButtonContainer");
+    let clickedIdLight = document.getElementsByClassName("expandButton");
     for (let i = 0; i < clickedIdLight.length; i++){
         clickedIdLight[i].addEventListener('click', expandGetClickedId);
     }
@@ -170,27 +163,62 @@ function addExpandListeners(){
 }
 
 function expandJobSummary(anId){
-    anId = anId.replace("jobButtonContainer", "");
-    let contractId = document.getElementById("columnContainer"+anId);
-    const expandDiv1 = document.getElementById(anId);
-    const expandDiv2 = document.getElementById("hiddenElementsContainer" + anId);
+    anId = anId.replace("expandButton", "");
 
-    contractId.addEventListener('click', contractGetClickedId);
+    let expandDiv1 = document.getElementById(anId);
+    let expandDiv2 = document.getElementById("hiddenElementsContainer" + anId);
+
     expandDiv1.style = "height: 120px";
     expandDiv2.style = "height: 85px";
+
+    const el = document.getElementById("jobButtonContainer"+anId);
+    while(el.firstChild) el.removeChild(el.firstChild);
+
+    const collapseButton = document.createElement("div");
+    collapseButton.id = "collapseButton" + anId;
+    collapseButton.className = "collapseButton";
+    collapseButton.style = "background-color: #999999;";
+    document.getElementById("jobButtonContainer"+anId).appendChild(collapseButton); 
+
+        const expandIcon = document.createElement("img");
+        expandIcon.setAttribute("height", "15");
+        expandIcon.setAttribute("width", "15");
+        expandIcon.src = 'img/up-arrow.png';
+        document.getElementById("collapseButton" + anId).appendChild(expandIcon);
+        //<a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by Freepik - Flaticon</a>
+        //<a href="https://www.flaticon.com/free-icons/up-arrow" title="up arrow icons">Up arrow icons created by Roundicons - Flaticon</a>
+
+    const openButton = document.createElement("div");
+    openButton.id = "openButton" + anId;
+    openButton.className = "openButton";
+    openButton.style = "background-color: #999999;";
+    document.getElementById("jobButtonContainer"+anId).appendChild(openButton); 
+
+        const openIcon = document.createElement("img");
+        openIcon.setAttribute("height", "15");
+        openIcon.setAttribute("width", "15");
+        openIcon.src = 'img/share.png';
+        document.getElementById("openButton" + anId).appendChild(openIcon);
+        //<a href="https://www.flaticon.com/free-icons/export" title="export icons">Export icons created by Amazona Adorada - Flaticon</a>
+    
+    const contractId = document.getElementById("collapseButton" + anId);
+    contractId.addEventListener('click', contractGetClickedId);
 }
 
 function contractJobSummary(anId){
     console.log(anId);
-    anId = anId.replace("columnContainer", "");
-    const contractDiv1 = document.getElementById(anId);
-    const contractDiv2 = document.getElementById("hiddenElementsContainer" + anId);
+    anId = anId.replace("collapseButton", "");
+    console.log(anId);
+
+    let contractDiv1 = document.getElementById(anId);
+    let contractDiv2 = document.getElementById("hiddenElementsContainer" + anId);
 
     contractDiv1.style = "height: 30px";
     contractDiv2.style = "height: 0px";
 
     addTestExpandListeners();
 }
+
 
 insertJobElements();
 addTestExpandListeners()
