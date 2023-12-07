@@ -78,12 +78,12 @@
 }
 
 #global-menu-left-pad {
-    width: 5%;
+    width: 0.5%;
     height: 100%;
 }
 
 #global-menu-inner-container {
-    width: 50%;
+    width: 54.5%;
     height: 100%;
     display: flex;
     flex-direction: row;
@@ -157,6 +157,10 @@
     font-size: xx-large;
     color: #747474;
 }
+
+.side-menu-button:hover {
+    background-color: #999999;
+  }
 
 #vertical-border {
     height: 100%;
@@ -233,9 +237,6 @@
 .global-menu-button {
     width: 16.5%;
     height: 100%;
-    /* border-width: 1px;
-    border-style: none solid none solid;
-    border-color: #1f2937; */
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -243,8 +244,13 @@
     align-items: center;
     font-family: sans-serif;
     font-weight: bold;
-    color: #747474;
+    /* color: #747474; */
+    color: black;
 }
+
+.global-menu-button:hover {
+    background-color: #999999;
+  }
 
 .column-header {
     width: 100%;
