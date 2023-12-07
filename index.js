@@ -90,9 +90,17 @@ function insertJobElements(){
             expandButton.style = "background-color: #999999;";
             document.getElementById(jobButtonContainer.id).appendChild(expandButton); 
 
-                const expandText = document.createTextNode("Expand");
-                expandText.className = "jobButtonText";
-                document.getElementById(expandButton.id).appendChild(expandText); 
+                // const expandText = document.createTextNode("Expand");
+                // expandText.className = "jobButtonText";
+                // document.getElementById(expandButton.id).appendChild(expandText); 
+
+                const elem = document.createElement("img");
+                elem.setAttribute("height", "15");
+                elem.setAttribute("width", "15");
+                elem.src = 'img/arrow-down-sign-to-navigate.png';
+                document.getElementById(expandButton.id).appendChild(elem);
+                //<a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by Freepik - Flaticon</a>
+                //<a href="https://www.flaticon.com/free-icons/up-arrow" title="up arrow icons">Up arrow icons created by Roundicons - Flaticon</a>
 
 
             const openButton = document.createElement("div");
@@ -101,9 +109,15 @@ function insertJobElements(){
             openButton.style = "background-color: #999999;";
             document.getElementById(jobButtonContainer.id).appendChild(openButton); 
 
-                const openText = document.createTextNode("Open");
-                openText.className = "jobButtonText";
-                document.getElementById(openButton.id).appendChild(openText); 
+                // const openText = document.createTextNode("Open");
+                // openText.className = "jobButtonText";
+                // document.getElementById(openButton.id).appendChild(openText); 
+                const elem2 = document.createElement("img");
+                elem2.setAttribute("height", "15");
+                elem2.setAttribute("width", "15");
+                elem2.src = 'img/share.png';
+                document.getElementById(openButton.id).appendChild(elem2);
+                //<a href="https://www.flaticon.com/free-icons/export" title="export icons">Export icons created by Amazona Adorada - Flaticon</a>
 
 
         const hiddenElementsContainer = document.createElement("div");
