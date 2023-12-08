@@ -216,6 +216,36 @@ function contractJobSummary(anId){
     contractDiv1.style = "height: 30px";
     contractDiv2.style = "height: 0px";
 
+    const el = document.getElementById("jobButtonContainer"+anId);
+    while(el.firstChild) el.removeChild(el.firstChild);
+
+    const expandButton = document.createElement("div");
+    expandButton.id = "expandButton" + anId;
+    expandButton.className = "expandButton";
+    expandButton.style = "background-color: #999999;";
+    document.getElementById("jobButtonContainer"+anId).appendChild(expandButton); 
+
+        const expandIcon = document.createElement("img");
+        expandIcon.setAttribute("height", "15");
+        expandIcon.setAttribute("width", "15");
+        expandIcon.src = 'img/arrow-down-sign-to-navigate.png';
+        document.getElementById("expandButton" + anId).appendChild(expandIcon);
+        //<a href="https://www.flaticon.com/free-icons/arrow" title="arrow icons">Arrow icons created by Freepik - Flaticon</a>
+        //<a href="https://www.flaticon.com/free-icons/up-arrow" title="up arrow icons">Up arrow icons created by Roundicons - Flaticon</a>
+
+    const openButton = document.createElement("div");
+    openButton.id = "openButton" + anId;
+    openButton.className = "openButton";
+    openButton.style = "background-color: #999999;";
+    document.getElementById("jobButtonContainer"+anId).appendChild(openButton); 
+
+        const openIcon = document.createElement("img");
+        openIcon.setAttribute("height", "15");
+        openIcon.setAttribute("width", "15");
+        openIcon.src = 'img/share.png';
+        document.getElementById("openButton" + anId).appendChild(openIcon);
+        //<a href="https://www.flaticon.com/free-icons/export" title="export icons">Export icons created by Amazona Adorada - Flaticon</a>
+
     addTestExpandListeners();
 }
 
