@@ -5,7 +5,7 @@ function removeElements(){
 
 function insertJobElements(){
     let colourChooser = 0;
-    let elementColour = "E8E9EC;";
+    let elementColour = "#E8E9EC;";
     for (let i=0; i<=100; i++){
         colourChooser += 1;
         const div = document.createElement("div");
@@ -248,7 +248,6 @@ function contractJobSummary(anId){
 
     addTestExpandListeners();
 }
-
 
 insertJobElements();
 addTestExpandListeners()

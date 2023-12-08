@@ -154,13 +154,24 @@
     align-items: center;
     font-family: sans-serif;
     font-weight: bolder;
-    font-size: xx-large;
-    color: #747474;
+    font-size: x-small;
+    text-align: center;
+    color: black;
 }
 
 .side-menu-button:hover {
     background-color: #999999;
-  }
+}
+
+.side-menu-flyout {
+    display: none;
+    width: 100px;
+    overflow: visible;
+}
+
+.side-menu-button:hover > .side-menu-flyout {
+    display: block;
+}
 
 #vertical-border {
     height: 100%;
