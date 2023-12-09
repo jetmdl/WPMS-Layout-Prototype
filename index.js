@@ -268,6 +268,126 @@ function searchModal() {
     modal.style.display = "block";
     }
 
+    // Create container for form
+    let new_div = document.createElement('div');
+    let newClass ='searchContainer';
+    new_div.className = newClass;
+    new_div.id = 'searchContainer';
+    document.getElementById('modal-content').appendChild(new_div);
+
+    //Create title for the form
+    let new_header = document.createElement('h3');
+    let headerClass = 'formHeader';
+    new_header.className = headerClass;
+    document.getElementById('searchContainer').appendChild(new_header);
+
+    //Populate and append the form title. 
+    headerString = 'Enter Work Order Number: '; 
+    new_header.appendChild(document.createTextNode(headerString));
+    // Create line break
+    let br = document.createElement('br');
+    document.getElementById('searchContainer').appendChild(br.cloneNode());
+
+    // Create value field for selected option
+    let valueInput = document.createElement('input');
+    valueInput.setAttribute('type', 'text');
+    valueInput.setAttribute('name', 'input');
+    valueInput.setAttribute('placeholder', 'Work Order Number');
+    valueInput.id = 'searchInput';
+
+    document.getElementById('searchContainer').appendChild(valueInput);
+
+    // Create a button and an event listner that passes the values contained in the form to function that updates the correct dictionary. 
+    document.getElementById('searchContainer').appendChild(br.cloneNode());
+    let actionButton = document.createElement('button');
+    actionButton.appendChild(document.createTextNode('Submit'));
+    actionButton.addEventListener('click', function() {validateSearch(document.getElementById('searchInput').value)});
+    document.getElementById('searchContainer').appendChild(actionButton);
+
+    //Create title for the form
+    let new_dieSearch_header = document.createElement('h3');
+    let dieSearchHeaderClass = 'formHeader';
+    new_dieSearch_header.className = dieSearchHeaderClass;
+    document.getElementById('searchContainer').appendChild(new_dieSearch_header);
+
+    //Populate and append the form title. 
+    dieSearchHeaderString = 'Enter Die Number: '; 
+    new_dieSearch_header.appendChild(document.createTextNode(dieSearchHeaderString));
+    // Create line break
+    //let br = document.createElement('br');
+    document.getElementById('searchContainer').appendChild(br.cloneNode());
+
+    // Create value field for selected option
+    let dieSearchValueInput = document.createElement('input');
+    dieSearchValueInput.setAttribute('type', 'text');
+    dieSearchValueInput.setAttribute('name', 'input');
+    dieSearchValueInput.setAttribute('placeholder', 'Die Number');
+    dieSearchValueInput.id = 'dieNoSearchInput';
+
+    document.getElementById('searchContainer').appendChild(dieSearchValueInput);
+
+    // Create a button and an event listner that passes the values contained in the form to function that updates the correct dictionary. 
+    document.getElementById('searchContainer').appendChild(br.cloneNode());
+    let dieSearchActionButton = document.createElement('button');
+    dieSearchActionButton.appendChild(document.createTextNode('Submit'));
+    dieSearchActionButton.addEventListener('click', function() {insertSearchedDieElements(document.getElementById('dieNoSearchInput').value)});
+    document.getElementById('searchContainer').appendChild(dieSearchActionButton);
+
+    //Create title for the form
+    let new_list_dieSearch_header = document.createElement('h3');
+    let listSearchHeaderClass = 'formHeader';
+    new_list_dieSearch_header.className = listSearchHeaderClass;
+    document.getElementById('searchContainer').appendChild(new_list_dieSearch_header);
+
+    //Populate and append the form title. 
+    listSearchHeaderString = 'Select Department and component to see process to-do list: '; 
+    new_list_dieSearch_header.appendChild(document.createTextNode(listSearchHeaderString));
+    // Create line break
+    //let br = document.createElement('br');
+    document.getElementById('searchContainer').appendChild(br.cloneNode());
+
+    var departmentList = ['Turning', 'Soft Machine', 'Hard Machine', 'Ramspark', 'Wirespark', 'Finishing']
+
+    var selectList = document.createElement("select");
+    selectList.id = "deptSelect";
+    document.getElementById('searchContainer').appendChild(selectList);
+
+    for (var i = 0; i < departmentList.length; i++) {
+        var option = document.createElement("option");
+        option.value = departmentList[i];
+        option.text = departmentList[i];
+        selectList.appendChild(option);
+    }
+
+    //Populate and append the form title. 
+    //listSearchHeaderString = 'Select Component: '; 
+    //new_list_dieSearch_header.appendChild(document.createTextNode(listSearchHeaderString));
+    // Create line break
+    //let br = document.createElement('br');
+    document.getElementById('searchContainer').appendChild(br.cloneNode());
+
+    var componentList = ['Lip', 'Mandrel', 'Dieplate', 'Backer', 'Bolster']
+
+    var selectList = document.createElement("select");
+    selectList.id = "componentSelect";
+    document.getElementById('searchContainer').appendChild(selectList);
+
+    for (var i = 0; i < componentList.length; i++) {
+        var option = document.createElement("option");
+        option.value = componentList[i];
+        option.text = componentList[i];
+        selectList.appendChild(option);
+    }
+
+    //document.getElementById('searchContainer').appendChild(listSearchValueInput);
+
+    // Create a button and an event listner that passes the values contained in the form to function that updates the correct dictionary. 
+    document.getElementById('searchContainer').appendChild(br.cloneNode());
+    let listSearchActionButton = document.createElement('button');
+    listSearchActionButton.appendChild(document.createTextNode('Submit'));
+    listSearchActionButton.addEventListener('click', function() {insertDeptToDoElements(document.getElementById('deptSelect').value, document.getElementById('componentSelect').value)});
+    document.getElementById('searchContainer').appendChild(listSearchActionButton);
+
     // When the user clicks on <span> (x), close the modal
     span.onclick = function() {
     modal.style.display = "none";
