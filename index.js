@@ -249,18 +249,10 @@ function contractJobSummary(anId){
     addTestExpandListeners();
 }
 
-insertJobElements();
-addTestExpandListeners();
-// searchModal();
-addSearchModalListner()
-// sortModal();
-addSortModalListner();
-
 function addSearchModalListner() {
     const searchModalId = document.getElementById("search-button");
     searchModalId.addEventListener('click', searchModal);
 }
-
 
 function searchModal() {
     // Get the modal
@@ -457,11 +449,44 @@ function sortModal() {
     // }
     modal.style.display = "block";
 
+    // Create container for form
+    let new_div = document.createElement('div');
+    let newClass ='sort-container';
+    new_div.className = newClass;
+    new_div.id = 'sortContainer';
+    document.getElementById('sort-modal-content').appendChild(new_div);
+
+    //Create a container for the form section header
+    let sort_header_div = document.createElement('div');
+    let sort_header_class ='sort-header-container';
+    sort_header_div.className = sort_header_class;
+    sort_header_div.id = 'sort-header-container';
+    document.getElementById('sortContainer').appendChild(sort_header_div);   
+
+    //Create title for the form
+    let new_header = document.createElement('h3');
+    let headerClass = 'formHeader';
+    new_header.className = headerClass;
+    document.getElementById('sort-header-container').appendChild(new_header);
+
+    //Populate and append the form title. 
+    headerString = 'Sort jobs: '; 
+    new_header.appendChild(document.createTextNode(headerString));
+    // Create line break
+    let br = document.createElement('br');
+    document.getElementById('sortContainer').appendChild(br.cloneNode());
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
     if (event.target == modal) {
+        const el = document.getElementById('sortContainer');
+        while(el.firstChild) el.removeChild(el.firstChild);
         modal.style.display = "none";
     }
     } 
 }
+
+insertJobElements();
+addTestExpandListeners();
+addSearchModalListner()
+addSortModalListner();

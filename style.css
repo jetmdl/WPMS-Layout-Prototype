@@ -519,7 +519,7 @@
     justify-content: center;
 }
 
-.search-container {
+.sort-container {
     width: 100%;
     height: 100%;
     display: flex;
@@ -554,7 +554,7 @@
     cursor: pointer;
 } 
 
-.search-header-container {
+.sort-header-container {
     width: 100%;
     height: 60px;
     background-color: #1f2937;
