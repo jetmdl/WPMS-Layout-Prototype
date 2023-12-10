@@ -251,22 +251,22 @@ function contractJobSummary(anId){
 
 insertJobElements();
 addTestExpandListeners();
-searchModal();
+// searchModal();
+addSearchModalListner()
+// sortModal();
+addSortModalListner();
+
+function addSearchModalListner() {
+    const searchModalId = document.getElementById("search-button");
+    searchModalId.addEventListener('click', searchModal);
+}
+
 
 function searchModal() {
     // Get the modal
     var modal = document.getElementById("myModal");
 
-    // Get the button that opens the modal
-    var btn = document.getElementById("search-button");
-
-    // Get the <span> element that closes the modal
-    var span = document.getElementsByClassName("close")[0];
-
-    // When the user clicks on the button, open the modal
-    btn.onclick = function() {
     modal.style.display = "block";
-    }
 
     // Create container for form
     let new_div = document.createElement('div');
@@ -428,10 +428,35 @@ function searchModal() {
             listSearchActionButton.addEventListener('click', function() {insertDeptToDoElements(document.getElementById('deptSelect').value, document.getElementById('componentSelect').value)});
             document.getElementById('list_feild_div').appendChild(listSearchActionButton);
 
-    // When the user clicks on <span> (x), close the modal
-    // span.onclick = function() {
-    // modal.style.display = "none";
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+    const el = document.getElementById('searchContainer');
+    while(el.firstChild) el.removeChild(el.firstChild);
+        modal.style.display = "none";
+    }
+    } 
+}
+
+function addSortModalListner() {
+    const sortModalId = document.getElementById("column-sort-button");
+    sortModalId.addEventListener('click', sortModal);
+}
+
+function sortModal() {
+    //something  column-sort-button
+    // Get the modal
+    var modal = document.getElementById("sort-modal");
+
+    // Get the button that opens the modal
+    // var btn = document.getElementById("column-sort-button");
+
+    // When the user clicks on the button, open the modal
+    // btn.onclick = function() {
+    // modal.style.display = "block";
     // }
+    modal.style.display = "block";
+
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
