@@ -163,6 +163,10 @@
     background-color: #999999;
 }
 
+#column-sort-button:hover {
+    background-color: #999999;
+}
+
 .side-menu-flyout {
     display: none;
     width: 100px;

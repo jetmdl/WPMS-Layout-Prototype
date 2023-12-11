@@ -411,8 +411,6 @@ function searchModal() {
                 selectList.appendChild(option);
             }
 
-            //document.getElementById('searchContainer').appendChild(listSearchValueInput);
-
             // Create a button and an event listner that passes the values contained in the form to function that updates the correct dictionary. 
             document.getElementById('searchContainer').appendChild(br.cloneNode());
             let listSearchActionButton = document.createElement('button');
@@ -436,17 +434,10 @@ function addSortModalListner() {
 }
 
 function sortModal() {
-    //something  column-sort-button
     // Get the modal
     var modal = document.getElementById("sort-modal");
 
-    // Get the button that opens the modal
-    // var btn = document.getElementById("column-sort-button");
-
-    // When the user clicks on the button, open the modal
-    // btn.onclick = function() {
-    // modal.style.display = "block";
-    // }
+    // open the modal
     modal.style.display = "block";
 
     // Create container for form
@@ -475,6 +466,32 @@ function sortModal() {
     // Create line break
     let br = document.createElement('br');
     document.getElementById('sortContainer').appendChild(br.cloneNode());
+
+    //Create a container for the form elements
+    let list_feild_div = document.createElement('div');
+    let list_feild_class ='feild_div';
+    list_feild_div.className = list_feild_class;
+    list_feild_div.id = 'list_feild_div';
+    document.getElementById('sortContainer').appendChild(list_feild_div); 
+
+    var valueList = ['Work Order', 'Die Number', 'Customer', 'Order Number', 'Start Date', 'End Date', 'On Time']
+
+    var selectList = document.createElement("select");
+    selectList.id = "componentSelect";
+    document.getElementById('list_feild_div').appendChild(selectList);
+
+    for (var i = 0; i < valueList.length; i++) {
+        var option = document.createElement("option");
+        option.value = valueList[i];
+        option.text = valueList[i];
+        selectList.appendChild(option);
+    }
+
+    document.getElementById('sortContainer').appendChild(br.cloneNode());
+    let listSearchActionButton = document.createElement('button');
+    listSearchActionButton.appendChild(document.createTextNode('Submit'));
+    listSearchActionButton.addEventListener('click', function() {insertDeptToDoElements(document.getElementById('deptSelect').value, document.getElementById('componentSelect').value)});
+    document.getElementById('list_feild_div').appendChild(listSearchActionButton);
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function(event) {
