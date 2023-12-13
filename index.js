@@ -1,5 +1,15 @@
-function removeElements(){
-    const el = document.getElementById('content-container');
+function removeElementsOuterContent(){
+    const el = document.getElementById('outer-content-container');
+    while(el.firstChild) el.removeChild(el.firstChild);
+}
+
+function removeElementsInnerContent(){
+    const el = document.getElementById('inner-content-container');
+    while(el.firstChild) el.removeChild(el.firstChild);
+}
+
+function removeElementsHeaderContent(){
+    const el = document.getElementById('contextual-menu-container');
     while(el.firstChild) el.removeChild(el.firstChild);
 }
 
