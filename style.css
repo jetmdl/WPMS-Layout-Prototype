@@ -233,7 +233,6 @@
     flex-wrap: nowrap;
     justify-content: start;
     align-items: center;
-    overflow-y: scroll;
 }
 
 #inner-content-container {
