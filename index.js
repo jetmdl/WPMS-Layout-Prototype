@@ -13,6 +13,14 @@ function removeElementsHeaderContent(){
     while(el.firstChild) el.removeChild(el.firstChild);
 }
 
+function removeElementsFromDefined(anId){
+    console.log(anId);
+    const el = document.getElementById(anId);
+    while(el.firstChild) {
+        el.removeChild(el.lastChild);
+    }
+}
+
 function insertJobElements(){
     let colourChooser = 0;
     let elementColour = "#E8E9EC;";
@@ -146,10 +154,17 @@ function insertJobElements(){
     }
 }
 
-function addTestExpandListeners(){
+function addExpandListeners(){
     let clickedIdLight = document.getElementsByClassName("expandButton");
     for (let i = 0; i < clickedIdLight.length; i++){
         clickedIdLight[i].addEventListener('click', expandGetClickedId);
+    }
+}
+
+function addOpenListeners(){
+    let clickedIdLight = document.getElementsByClassName("openButton");
+    for (let i = 0; i < clickedIdLight.length; i++){
+        clickedIdLight[i].addEventListener('click', openGetClickedId);
     }
 }
 
@@ -161,15 +176,8 @@ function contractGetClickedId(){
     contractJobSummary(this.id);
 }
 
-function addExpandListeners(){
-    let clickedIdLight = document.getElementsByClassName('job-light');
-    for (let i = 0; i < clickedIdLight.length; i++){
-        clickedIdLight[i].addEventListener('click', expandGetClickedId);
-    }
-    let clickedIdDark = document.getElementsByClassName('job-dark');
-    for (let i = 0; i < clickedIdDark.length; i++){
-        clickedIdDark[i].addEventListener('click', getClickedId);
-    }
+function openGetClickedId(){
+    createJobTable(this.id);
 }
 
 function expandJobSummary(anId){
@@ -256,7 +264,7 @@ function contractJobSummary(anId){
         document.getElementById("openButton" + anId).appendChild(openIcon);
         //<a href="https://www.flaticon.com/free-icons/export" title="export icons">Export icons created by Amazona Adorada - Flaticon</a>
 
-    addTestExpandListeners();
+    addExpandListeners();
 }
 
 function addSearchModalListner() {
@@ -513,7 +521,33 @@ function sortModal() {
     } 
 }
 
+function createJobTable(anId) {
+    anId = anId.replace("openButton", "");
+    removeElementsFromDefined('inner-content-container');
+
+    const tableTitleContainer = document.createElement("div");
+    tableTitleContainer.id = 'tableTitleContainer';
+    tableTitleContainer.className = 'tableTitleContainer';
+    document.getElementById("inner-content-container").appendChild(tableTitleContainer);  
+
+    //Create title for the form
+    let new_header = document.createElement('h3');
+    let headerClass = 'formHeader';
+    new_header.className = headerClass;
+    document.getElementById('tableTitleContainer').appendChild(new_header);
+
+    //Populate and append the form title. 
+    headerString = anId; 
+    new_header.appendChild(document.createTextNode(headerString));
+    // Create line break
+    let br = document.createElement('br');
+    document.getElementById('tableTitleContainer').appendChild(br.cloneNode());
+
+    // tempDisplay.innerHTML = anId;
+}
+
 insertJobElements();
-addTestExpandListeners();
+addExpandListeners();
+addOpenListeners();
 addSearchModalListner()
 addSortModalListner();
