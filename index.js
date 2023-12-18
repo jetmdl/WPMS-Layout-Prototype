@@ -221,6 +221,9 @@ function expandJobSummary(anId){
     
     const contractId = document.getElementById("collapseButton" + anId);
     contractId.addEventListener('click', contractGetClickedId);
+
+    const openId = document.getElementById("openButton" + anId);
+    openId.addEventListener('click', openGetClickedId);
 }
 
 function contractJobSummary(anId){
