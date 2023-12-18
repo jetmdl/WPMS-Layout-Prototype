@@ -14,7 +14,6 @@ function removeElementsHeaderContent(){
 }
 
 function removeElementsFromDefined(anId){
-    console.log(anId);
     const el = document.getElementById(anId);
     while(el.firstChild) {
         el.removeChild(el.lastChild);
@@ -268,6 +267,7 @@ function contractJobSummary(anId){
         //<a href="https://www.flaticon.com/free-icons/export" title="export icons">Export icons created by Amazona Adorada - Flaticon</a>
 
     addExpandListeners();
+    addOpenListeners();
 }
 
 function addSearchModalListner() {
